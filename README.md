@@ -4,7 +4,7 @@ Todo List 前端，使用 Vite + React + TypeScript，以 TanStack Query 管理 
 
 ## 本機開發
 
-需要先啟動後端（見 `ci-cd-workshop-backend`）。
+需求：Node.js 24（版本記錄在 `.nvmrc`，可用 `nvm use` 切換）。需要先啟動後端（見 `ci-cd-workshop-backend`）。
 
 ```bash
 npm install
