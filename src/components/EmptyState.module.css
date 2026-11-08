@@ -1,0 +1,17 @@
+.container {
+  padding: 56px 16px;
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius);
+  text-align: center;
+}
+
+.title {
+  margin: 0;
+  font-weight: 500;
+}
+
+.description {
+  margin: 6px 0 0;
+  color: var(--color-muted);
+  font-size: 0.875rem;
+}
