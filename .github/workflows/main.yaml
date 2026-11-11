@@ -13,21 +13,17 @@ jobs:
     steps:
       - uses: actions/checkout@v7
 
-      - uses: actions/setup-node@v7
+      - uses: astral-sh/setup-uv@v7
         with:
-          node-version-file: .nvmrc
-          cache: npm
+          enable-cache: true
 
-      - run: npm ci
+      - run: uv sync --locked
 
-      - name: Oxlint
-        run: npm run lint
+      - name: Ruff check
+        run: uv run ruff check .
 
-      - name: Prettier
-        run: npm run format:check
-
-      - name: Type check
-        run: npm run typecheck
+      - name: Ruff format
+        run: uv run ruff format --check .
 
   test:
     name: Test
@@ -35,12 +31,11 @@ jobs:
     steps:
       - uses: actions/checkout@v7
 
-      - uses: actions/setup-node@v7
+      - uses: astral-sh/setup-uv@v7
         with:
-          node-version-file: .nvmrc
-          cache: npm
+          enable-cache: true
 
-      - run: npm ci
+      - run: uv sync --locked
 
-      - name: Vitest
-        run: npm test -- --run
+      - name: Pytest
+        run: uv run pytest
